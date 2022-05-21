@@ -1,0 +1,16 @@
+final List<String> listKitab = [
+  'Kejadian',
+  'Keluaran',
+  'Imamat',
+  'Bilangan',
+  'Yosua',
+  'Hakim-hakim',
+  'Rut',
+  '1 Samuel',
+  '2 samuel',
+  '1 Raja-raja',
+  '2 Tarawikh',
+  '2 Tarawikh',
+  'Ezra',
+  'Ezra',
+];
