@@ -28,7 +28,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           Text(
             textHeader,
-            style: txtSM16d,
+            style: txtSB16d,
           ),
           const SizedBox(
             height: 4,

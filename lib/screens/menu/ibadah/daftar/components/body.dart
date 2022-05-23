@@ -55,7 +55,7 @@ class _BodyState extends State<Body> {
                                     alignment: Alignment.topLeft,
                                     child: Text(
                                       'Sabtu, 3 September 2022',
-                                      style: txtSM14d,
+                                      style: txtSB14d,
                                     ),
                                   ),
                                 ),
@@ -95,7 +95,7 @@ class _BodyState extends State<Body> {
                                   alignment: Alignment.topLeft,
                                   child: Text(
                                     "Keterangan",
-                                    style: txtSM14d,
+                                    style: txtSB14d,
                                   ),
                                 ),
                                 Align(
@@ -129,7 +129,7 @@ class _BodyState extends State<Body> {
                               alignment: Alignment.topLeft,
                               child: Text(
                                 "Nama Peserta",
-                                style: txtSM14d,
+                                style: txtSB14d,
                               ),
                             ),
                             TxtField(
@@ -170,7 +170,7 @@ class _BodyState extends State<Body> {
                                                   left: 6),
                                               child: Text(
                                                 "Tambah Peserta",
-                                                style: txtSM12b,
+                                                style: txtSB12b,
                                               ),
                                             ),
                                           ],
@@ -226,7 +226,7 @@ class _BodyState extends State<Body> {
                                                                 right: 90),
                                                         child: Text(
                                                           'Nama Peserta',
-                                                          style: txtSM14d,
+                                                          style: txtSB14d,
                                                         ),
                                                       ),
                                                     ],

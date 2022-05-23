@@ -52,7 +52,7 @@ class _BodyRepeatPinState extends State<BodyRepeatPin> {
         children: [
           Text(
             "Ulangi Kode Keamanan",
-            style: txtSM18d,
+            style: txtSB18d,
           ),
           Expanded(
             child: SingleChildScrollView(

@@ -71,7 +71,7 @@ class _BodyForgotOtpState extends State<BodyForgotOtp> {
                                 "Kami telah mengirimkan kode verifikasi melalui email ke "),
                         TextSpan(
                           text: "sandoz.maryo@gmail.com",
-                          style: txtSM12g,
+                          style: txtSB12g,
                         ),
                       ],
                     ),

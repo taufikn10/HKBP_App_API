@@ -49,7 +49,7 @@ class Body extends StatelessWidget {
                                     topRight: Radius.circular(24),
                                   ),
                                   child: Image.asset(
-                                    berita[index]["img"],
+                                    berita[index]["img"][0],
                                     fit: BoxFit.fitWidth,
                                     width: double.infinity,
                                     height: 156,

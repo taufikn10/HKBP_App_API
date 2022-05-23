@@ -38,7 +38,7 @@ class _CommentsState extends State<Comments> {
                     children: [
                       Text(
                         "Komentar",
-                        style: txtSM14d,
+                        style: txtSB14d,
                       ),
                       Text(
                         " (26)",
@@ -69,7 +69,7 @@ class _CommentsState extends State<Comments> {
                                             children: [
                                               Text(
                                                 "Komentar",
-                                                style: txtSM14d,
+                                                style: txtSB14d,
                                               ),
                                               Text(
                                                 " (26)",
@@ -83,7 +83,7 @@ class _CommentsState extends State<Comments> {
                                               children: [
                                                 Text(
                                                   "Kembali",
-                                                  style: txtSM10b,
+                                                  style: txtSB10b,
                                                 ),
                                                 Icon(
                                                   Icons
@@ -144,7 +144,7 @@ class _CommentsState extends State<Comments> {
                       children: [
                         Text(
                           "Lihat Semua",
-                          style: txtSM10b,
+                          style: txtSB10b,
                         ),
                         const SizedBox(width: 2),
                         Icon(

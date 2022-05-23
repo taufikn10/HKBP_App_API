@@ -29,7 +29,7 @@ class BodyRincianTingting extends StatelessWidget {
             children: [
               Text(
                 tingting.jadwal,
-                style: txtSM14d,
+                style: txtSB14d,
               ),
               CardMenu(
                 tap: () {},
@@ -79,7 +79,7 @@ class BodyRincianTingting extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 24, bottom: 10),
                 child: Align(
-                  child: Text("Ulang Tahun", style: txtSM16d),
+                  child: Text("Ulang Tahun", style: txtSB16d),
                 ),
               ),
               ListView.builder(
@@ -121,7 +121,7 @@ class RincianTxt extends StatelessWidget {
           padding: EdgeInsets.only(top: top, bottom: 10),
           child: Text(
             txtJudul,
-            style: txtSM16d,
+            style: txtSB16d,
           ),
         ),
         Align(
@@ -172,7 +172,7 @@ class CardMenu extends StatelessWidget {
                 const SizedBox(width: 12),
                 Text(
                   txtCard,
-                  style: txtSM12d,
+                  style: txtSB12d,
                 ),
               ],
             ),

@@ -34,7 +34,7 @@ class BodySuccess extends StatelessWidget {
                               padding: const EdgeInsets.only(top: 25),
                               child: Text(
                                 "Pendaftaran Berhasil",
-                                style: txtSM14gn,
+                                style: txtSB14gn,
                               ),
                             ),
                             const Padding(
@@ -51,7 +51,7 @@ class BodySuccess extends StatelessWidget {
                                     alignment: Alignment.topLeft,
                                     child: Text(
                                       "Sabtu, 3 September 2022",
-                                      style: txtSM14d,
+                                      style: txtSB14d,
                                     ),
                                   ),
                                 ),

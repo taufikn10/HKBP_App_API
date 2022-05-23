@@ -28,7 +28,7 @@ class _InfoDeskripsiState extends State<InfoDeskripsi> {
         children: [
           Text(
             widget.video.title,
-            style: txtSM16d,
+            style: txtSB16d,
           ),
           // ignore: prefer_const_constructors
           SizedBox(height: 20),
@@ -136,7 +136,7 @@ class _InfoDeskripsiState extends State<InfoDeskripsi> {
                     isLihatSelengkapnya
                         ? "Lihat lihat lebih sedikit"
                         : "Lihat Selengkapnya",
-                    style: txtSM12b,
+                    style: txtSB12b,
                     textAlign: TextAlign.center,
                   ),
                   Icon(

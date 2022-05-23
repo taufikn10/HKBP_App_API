@@ -19,14 +19,14 @@ class Body extends StatelessWidget {
               children: [
                 Text(
                   "Allah menciptakan langit dan bumi serta isinya",
-                  style: txtSM16d,
+                  style: txtSB16d,
                   textAlign: TextAlign.justify,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8, bottom: 24),
                   child: Text(
                     "1:1-2:7",
-                    style: txtSM16d,
+                    style: txtSB16d,
                   ),
                 ),
                 RichText(
@@ -38,7 +38,7 @@ class Body extends StatelessWidget {
                           child: Text(
                             '1',
                             textScaleFactor: 0.8,
-                            style: txtSM14dh,
+                            style: txtSB14dh,
                           ),
                         ),
                       ),
@@ -52,7 +52,7 @@ class Body extends StatelessWidget {
                           child: Text(
                             '2',
                             textScaleFactor: 0.8,
-                            style: txtSM14dh,
+                            style: txtSB14dh,
                           ),
                         ),
                       ),
@@ -67,7 +67,7 @@ class Body extends StatelessWidget {
                           child: Text(
                             '3',
                             textScaleFactor: 0.8,
-                            style: txtSM14dh,
+                            style: txtSB14dh,
                           ),
                         ),
                       ),

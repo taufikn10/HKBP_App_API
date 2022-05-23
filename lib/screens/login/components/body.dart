@@ -35,7 +35,7 @@ class _BodyState extends State<Body> {
                 child: Text(
                   "Gereja HKBP Huria \n Kristen Batak Protestan",
                   textAlign: TextAlign.center,
-                  style: txtSM16d,
+                  style: txtSB16d,
                 ),
               ),
               Padding(
@@ -72,7 +72,7 @@ class _BodyState extends State<Body> {
                         padding: const EdgeInsets.all(16),
                         child: Text(
                           "Masuk",
-                          style: txtSM16b,
+                          style: txtSB16b,
                         ),
                       ),
                       const RoundedInput(
@@ -124,7 +124,7 @@ class _BodyState extends State<Body> {
                             child: GestureDetector(
                               child: Text(
                                 "Lupa Kata Sandi ?",
-                                style: txtSM12d,
+                                style: txtSB12d,
                               ),
                               onTap: () {
                                 Navigator.push(
@@ -172,7 +172,7 @@ class _BodyState extends State<Body> {
                   children: [
                     Text(
                       "Belum Punya Akun ? ",
-                      style: txtSM12d,
+                      style: txtSB12d,
                     ),
                     GestureDetector(
                       onTap: () {

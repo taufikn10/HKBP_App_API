@@ -22,7 +22,7 @@ class BodyConfirm extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 80),
                   child: Text(
                     "Konfirmasi Akun Zipay",
-                    style: txtSM18d,
+                    style: txtSB18d,
                   ),
                 ),
                 Padding(
@@ -52,13 +52,13 @@ class BodyConfirm extends StatelessWidget {
                     children: [
                       Text(
                         "Baca kebijakan privasi Zipay ",
-                        style: txtSM12d,
+                        style: txtSB12d,
                       ),
                       GestureDetector(
                         onTap: () {},
                         child: Text(
                           "disini",
-                          style: txtSM12b,
+                          style: txtSB12b,
                         ),
                       ),
                     ],

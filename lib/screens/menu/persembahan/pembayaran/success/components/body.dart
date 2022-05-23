@@ -36,7 +36,7 @@ class Body extends StatelessWidget {
                               padding: const EdgeInsets.only(top: 25),
                               child: Text(
                                 "Pembayaran Berhasil",
-                                style: txtSM14gn,
+                                style: txtSB14gn,
                               ),
                             ),
                             const Padding(
@@ -53,7 +53,7 @@ class Body extends StatelessWidget {
                                     alignment: Alignment.topLeft,
                                     child: Text(
                                       "Sabtu, 3 September 2022",
-                                      style: txtSM14d,
+                                      style: txtSB14d,
                                     ),
                                   ),
                                 ),
@@ -103,7 +103,7 @@ class Body extends StatelessWidget {
                                     alignment: Alignment.topLeft,
                                     child: Text(
                                       "Keterangan",
-                                      style: txtSM12d,
+                                      style: txtSB12d,
                                     ),
                                   ),
                                 ),
@@ -132,7 +132,7 @@ class Body extends StatelessWidget {
                                         vertical: 12),
                                     child: Text(
                                       "Tuhan Yesus Memberkati",
-                                      style: txtSM12d,
+                                      style: txtSB12d,
                                       textAlign: TextAlign.center,
                                     ),
                                   ),

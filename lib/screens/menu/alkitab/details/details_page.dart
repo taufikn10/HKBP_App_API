@@ -27,7 +27,7 @@ class _DetailKitabState extends State<DetailKitab> {
                   alignment: Alignment.center,
                   child: Text(
                     "KITAB",
-                    style: txtSM12d,
+                    style: txtSB12d,
                   ),
                 ),
               ),
@@ -36,7 +36,7 @@ class _DetailKitabState extends State<DetailKitab> {
                   alignment: Alignment.center,
                   child: Text(
                     "PASAL",
-                    style: txtSM12d,
+                    style: txtSB12d,
                   ),
                 ),
               ),
@@ -45,7 +45,7 @@ class _DetailKitabState extends State<DetailKitab> {
                   alignment: Alignment.center,
                   child: Text(
                     "AYAT",
-                    style: txtSM12d,
+                    style: txtSB12d,
                   ),
                 ),
               ),

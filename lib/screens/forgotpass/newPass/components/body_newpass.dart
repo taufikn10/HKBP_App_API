@@ -43,7 +43,7 @@ class BodyNewPass extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 24),
                       child: Text(
                         "Buat Kata Sandi",
-                        style: txtSM16b,
+                        style: txtSB16b,
                       ),
                     ),
                     const Padding(
@@ -104,7 +104,7 @@ class BodyNewPass extends StatelessWidget {
                 children: [
                   Text(
                     "Apa itu lupa kata sandi ? ",
-                    style: txtSM12d,
+                    style: txtSB12d,
                   ),
                   GestureDetector(
                     onTap: () {},

@@ -75,7 +75,7 @@ class _BodyOtpState extends State<BodyOtp> {
                                 "Silahkan masukan kode verifikasi yang sudah dikirim melalui email ke "),
                         TextSpan(
                           text: "sandoz.maryo@gmail.com",
-                          style: txtSM12g,
+                          style: txtSB12g,
                         ),
                       ],
                     ),

@@ -27,7 +27,7 @@ class Ayat extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Text(
                     '${index + 1}',
-                    style: txtSM16d,
+                    style: txtSB16d,
                   ),
                 ),
               ),

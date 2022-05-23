@@ -80,7 +80,7 @@ class _AlKitabPageState extends State<AlKitabPage> {
                         },
                         child: Text(
                           "Kejadian 1",
-                          style: txtSM14d,
+                          style: txtSB14d,
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -91,7 +91,7 @@ class _AlKitabPageState extends State<AlKitabPage> {
                         onTap: () {},
                         child: Text(
                           "TB",
-                          style: txtSM16d,
+                          style: txtSB16d,
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -130,7 +130,7 @@ class _AlKitabPageState extends State<AlKitabPage> {
                                 children: [
                                   Text(
                                     snapshot.data![index].content,
-                                    style: txtSM16d,
+                                    style: txtSB16d,
                                     textAlign: TextAlign.justify,
                                   ),
                                   Padding(
@@ -138,7 +138,7 @@ class _AlKitabPageState extends State<AlKitabPage> {
                                         top: 8, bottom: 24),
                                     child: Text(
                                       "1:1-2:7",
-                                      style: txtSM16d,
+                                      style: txtSB16d,
                                     ),
                                   ),
                                   RichText(
@@ -151,7 +151,7 @@ class _AlKitabPageState extends State<AlKitabPage> {
                                               snapshot.data![index].verse
                                                   .toString(),
                                               textScaleFactor: 0.8,
-                                              style: txtSM14dh,
+                                              style: txtSB14dh,
                                             ),
                                           ),
                                         ),

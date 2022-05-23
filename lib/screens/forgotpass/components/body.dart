@@ -41,7 +41,7 @@ class Body extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 24),
                       child: Text(
                         "Lupa Kata Sandi",
-                        style: txtSM16b,
+                        style: txtSB16b,
                       ),
                     ),
                     const RoundedInput(
@@ -80,7 +80,7 @@ class Body extends StatelessWidget {
                 children: [
                   Text(
                     "Apa itu lupa kata sandi ? ",
-                    style: txtSM12d,
+                    style: txtSB12d,
                   ),
                   GestureDetector(
                     onTap: () {},

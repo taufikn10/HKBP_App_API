@@ -65,7 +65,7 @@ class _BodyState extends State<Body> {
                       padding: const EdgeInsets.symmetric(vertical: 24),
                       child: Text(
                         "Daftar",
-                        style: txtSM16b,
+                        style: txtSB16b,
                       ),
                     ),
                     const Padding(
@@ -174,7 +174,7 @@ class _BodyState extends State<Body> {
                 children: [
                   Text(
                     "Sudah Punya Akun ? ",
-                    style: txtSM12d,
+                    style: txtSB12d,
                   ),
                   GestureDetector(
                     onTap: () {
@@ -185,7 +185,7 @@ class _BodyState extends State<Body> {
                     },
                     child: Text(
                       "Masuk",
-                      style: txtSM12b,
+                      style: txtSB12b,
                     ),
                   )
                 ],

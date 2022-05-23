@@ -15,7 +15,7 @@ class DetailsNews extends StatefulWidget {
 class _DetailNewsState extends State<DetailsNews> {
   @override
   Widget build(BuildContext context) {
-    List details = widget.detail['rincianImg'];
+    List details = widget.detail['img'];
     return Scaffold(
       appBar: const TopBarDetails(txtTitle: "Rincian Berita"),
       body: Background(
@@ -77,7 +77,7 @@ class _DetailNewsState extends State<DetailsNews> {
                       const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
                   child: Text(
                     widget.detail['title'],
-                    style: txtSM16d,
+                    style: txtSB16d,
                     textAlign: TextAlign.justify,
                   ),
                 ),

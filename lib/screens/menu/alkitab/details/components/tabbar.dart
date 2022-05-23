@@ -27,7 +27,7 @@ class TabControllerBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Text(
         "Alkitab",
-        style: txtSM16d,
+        style: txtSB16d,
       ),
     );
   }

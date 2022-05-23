@@ -39,7 +39,7 @@ class BodyDetail extends StatelessWidget {
                       children: [
                         Text(
                           kegiatan.title,
-                          style: txtSM16d,
+                          style: txtSB16d,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 16, bottom: 6),

@@ -9,6 +9,7 @@ import 'package:hkbp_app/screens/menu/ibadah/ibadah_page.dart';
 import 'package:hkbp_app/screens/menu/kegiatan/kegiatan_page.dart';
 import 'package:hkbp_app/screens/menu/khotbah/kotbah_page.dart';
 import 'package:hkbp_app/screens/menu/persembahan/persembahan_page.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../../fontstyle.dart';
 
@@ -165,7 +166,7 @@ class Body extends StatelessWidget {
                               alignment: Alignment.center,
                               child: Text(
                                 'Khotbah',
-                                style: txtSM12w,
+                                style: txtSB12w,
                               ),
                             ),
                           ),
@@ -188,9 +189,12 @@ class Body extends StatelessWidget {
                           judul: "Alkitab",
                           tap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const AlKitabPage()));
+                              context,
+                              PageTransition(
+                                  alignment: Alignment.bottomCenter,
+                                  child: const AlKitabPage(),
+                                  type: PageTransitionType.scale),
+                            );
                           },
                         ),
                         MenuHome(
@@ -198,10 +202,12 @@ class Body extends StatelessWidget {
                           judul: "Persembahan",
                           tap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const PersembahanPage()));
+                              context,
+                              PageTransition(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const PersembahanPage(),
+                                  type: PageTransitionType.bottomToTop),
+                            );
                           },
                         ),
                         MenuHome(
@@ -209,9 +215,12 @@ class Body extends StatelessWidget {
                           judul: "Berita",
                           tap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const BeritaPage()));
+                              context,
+                              PageTransition(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const BeritaPage(),
+                                  type: PageTransitionType.bottomToTop),
+                            );
                           },
                         ),
                         MenuHome(
@@ -219,9 +228,12 @@ class Body extends StatelessWidget {
                           judul: "Ibadah",
                           tap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const IbadahPage()));
+                              context,
+                              PageTransition(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const IbadahPage(),
+                                  type: PageTransitionType.bottomToTop),
+                            );
                           },
                         ),
                       ],
@@ -237,9 +249,12 @@ class Body extends StatelessWidget {
                           judul: "Donasi",
                           tap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const DonasiPage()));
+                              context,
+                              PageTransition(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const DonasiPage(),
+                                  type: PageTransitionType.bottomToTop),
+                            );
                           },
                         ),
                         MenuHome(
@@ -247,9 +262,12 @@ class Body extends StatelessWidget {
                           judul: "Belanja",
                           tap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const BelanjaPage()));
+                              context,
+                              PageTransition(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const BelanjaPage(),
+                                  type: PageTransitionType.bottomToTop),
+                            );
                           },
                         ),
                         MenuHome(
@@ -257,9 +275,12 @@ class Body extends StatelessWidget {
                           judul: "Khotbah",
                           tap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const KotbahPage()));
+                              context,
+                              PageTransition(
+                                  alignment: Alignment.bottomLeft,
+                                  child: const KotbahPage(),
+                                  type: PageTransitionType.bottomToTop),
+                            );
                           },
                         ),
                         MenuHome(
@@ -267,10 +288,12 @@ class Body extends StatelessWidget {
                           judul: "Kegiatan",
                           tap: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        KegiatanPage(kegiatans)));
+                              context,
+                              PageTransition(
+                                  alignment: Alignment.bottomLeft,
+                                  child: KegiatanPage(kegiatans),
+                                  type: PageTransitionType.bottomToTop),
+                            );
                           },
                         ),
                       ],

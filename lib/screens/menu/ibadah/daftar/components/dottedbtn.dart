@@ -46,7 +46,7 @@ class _DottedBtnState extends State<DottedBtn> {
                 padding: const EdgeInsets.only(left: 6),
                 child: Text(
                   "Tambah Peserta",
-                  style: txtSM12b,
+                  style: txtSB12b,
                 ),
               ),
             ],
@@ -80,7 +80,7 @@ class _DottedBtnState extends State<DottedBtn> {
                           padding: const EdgeInsets.only(right: 90),
                           child: Text(
                             'Nama Peserta',
-                            style: txtSM14d,
+                            style: txtSB14d,
                           ),
                         ),
                       ],

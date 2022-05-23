@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hkbp_app/components/background.dart';
 import 'package:hkbp_app/fontstyle.dart';
 import 'package:hkbp_app/list/list_belanja.dart';
+import 'package:hkbp_app/screens/menu/belanja/deskripsi/desk_belanja_page.dart';
 import 'package:intl/intl.dart';
 
 class BodyBelanja extends StatelessWidget {
@@ -17,7 +18,15 @@ class BodyBelanja extends StatelessWidget {
           shrinkWrap: true,
           itemCount: belanja.length,
           itemBuilder: (context, index) => GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DeskripsiBelanjaPage(
+                      descBelanja: belanja[index],
+                    ),
+                  ));
+            },
             child: Card(
               elevation: 0,
               child: Padding(
@@ -31,7 +40,7 @@ class BodyBelanja extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(16),
                             child: Image.asset(
-                              belanja[index]["img"],
+                              belanja[index]["img"][0],
                               height: 64,
                             ),
                           ),
@@ -52,19 +61,11 @@ class BodyBelanja extends StatelessWidget {
                                     children: [
                                       Text(
                                         "Sisa ",
-                                        style: GoogleFonts.inter(
-                                          color: blueColor,
-                                          fontWeight: FontWeight.w300,
-                                          fontSize: 12,
-                                        ),
+                                        style: txtL12b,
                                       ),
                                       Text(
                                         belanja[index]["sisa"].toString(),
-                                        style: GoogleFonts.inter(
-                                          color: blueColor,
-                                          fontWeight: FontWeight.w300,
-                                          fontSize: 12,
-                                        ),
+                                        style: txtL12b,
                                       ),
                                     ],
                                   ),
@@ -77,7 +78,7 @@ class BodyBelanja extends StatelessWidget {
                                               decimalDigits: 0,
                                               symbol: "Rp")
                                           .format(belanja[index]["harga"]),
-                                      style: txtSM12d,
+                                      style: txtSB12d,
                                     ),
                                     const Spacer(),
                                     OutlinedButton(

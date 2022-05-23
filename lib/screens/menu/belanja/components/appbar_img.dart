@@ -25,7 +25,7 @@ class AppbarImg extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         txtTitle,
-        style: txtSM16d,
+        style: txtSB16d,
       ),
       actions: [
         Padding(

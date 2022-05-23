@@ -83,11 +83,11 @@ class _BasicTileWidgetState extends State<BasicTileWidget> {
                         children: [
                           Text(
                             jadwal!,
-                            style: txtSM14d,
+                            style: txtSB14d,
                           ),
                           Text(
                             jam!,
-                            style: txtSM14d,
+                            style: txtSB14d,
                           ),
                         ],
                       ),

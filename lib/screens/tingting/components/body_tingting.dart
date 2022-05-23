@@ -65,11 +65,11 @@ class ListTing extends StatelessWidget {
             children: [
               Text(
                 listTing.jadwal,
-                style: txtSM12d,
+                style: txtSB12d,
               ),
               Text(
                 "Rincian",
-                style: txtSM12b,
+                style: txtSB12b,
               ),
             ],
           ),

@@ -26,7 +26,7 @@ class _BodyRincianDonasiState extends State<BodyRincianDonasi> {
 
   @override
   Widget build(BuildContext context) {
-    List donasi = widget.donasiImg['rincianImg'];
+    List donasi = widget.donasiImg['img'];
     return Background(
       child: Align(
         alignment: Alignment.topCenter,
@@ -91,7 +91,7 @@ class _BodyRincianDonasiState extends State<BodyRincianDonasi> {
                         children: [
                           Text(
                             widget.donasiImg['title'],
-                            style: txtSM16d,
+                            style: txtSB16d,
                             textAlign: TextAlign.justify,
                           ),
                           Padding(

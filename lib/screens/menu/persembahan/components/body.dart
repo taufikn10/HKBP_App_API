@@ -62,7 +62,7 @@ class _BodyState extends State<Body> {
                       padding: const EdgeInsets.only(left: 24, bottom: 12),
                       child: Text(
                         "Jenis Persembahan",
-                        style: txtSM14d,
+                        style: txtSB14d,
                       ),
                     ),
                   ),
@@ -79,7 +79,7 @@ class _BodyState extends State<Body> {
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             child: Text(
                               "Nominal Persembahan",
-                              style: txtSM14d,
+                              style: txtSB14d,
                             ),
                           ),
                           Container(
@@ -143,7 +143,7 @@ class _BodyState extends State<Body> {
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             child: Text(
                               "Keterangan",
-                              style: txtSM14d,
+                              style: txtSB14d,
                             ),
                           ),
                           Container(

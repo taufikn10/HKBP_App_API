@@ -51,7 +51,7 @@ class _BodyPinState extends State<BodyPin> {
         children: [
           Text(
             "Buat Kode Keamananan",
-            style: txtSM18d,
+            style: txtSB18d,
           ),
           Expanded(
             child: SingleChildScrollView(

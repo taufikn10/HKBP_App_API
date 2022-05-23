@@ -45,78 +45,78 @@ TextStyle txtB10b = GoogleFonts.inter(
 // END w700B //
 
 // Text Style w600 Semi Bold //
-TextStyle txtSM18d = GoogleFonts.inter(
+TextStyle txtSB18d = GoogleFonts.inter(
   color: darkColor,
   fontWeight: FontWeight.w600,
   fontSize: 18,
 );
 
-TextStyle txtSM16 = GoogleFonts.inter(
+TextStyle txtSB16 = GoogleFonts.inter(
   fontWeight: FontWeight.w600,
   fontSize: 16,
 );
 
-TextStyle txtSM16d = GoogleFonts.inter(
+TextStyle txtSB16d = GoogleFonts.inter(
   color: darkColor,
   fontWeight: FontWeight.w600,
   fontSize: 16,
 );
 
-TextStyle txtSM16b = GoogleFonts.inter(
+TextStyle txtSB16b = GoogleFonts.inter(
   color: blueColor,
   fontWeight: FontWeight.w600,
   fontSize: 16,
 );
 
-TextStyle txtSM12d = GoogleFonts.inter(
+TextStyle txtSB12d = GoogleFonts.inter(
   color: darkColor,
   fontWeight: FontWeight.w600,
   fontSize: 12,
 );
 
-TextStyle txtSM12b = GoogleFonts.inter(
+TextStyle txtSB12b = GoogleFonts.inter(
   color: blueColor,
   fontWeight: FontWeight.w600,
   fontSize: 12,
 );
 
-TextStyle txtSM10b = GoogleFonts.inter(
+TextStyle txtSB10b = GoogleFonts.inter(
   color: blueColor,
   fontWeight: FontWeight.w600,
   fontSize: 12,
 );
 
-TextStyle txtSM14dh = GoogleFonts.inter(
+TextStyle txtSB14dh = GoogleFonts.inter(
   color: darkColor,
   fontWeight: FontWeight.w600,
   fontSize: 14,
   height: 1.5,
 );
 
-TextStyle txtSM12g = GoogleFonts.inter(
+TextStyle txtSB12g = GoogleFonts.inter(
   color: greyColor,
   fontWeight: FontWeight.w600,
   fontSize: 12,
 );
 
-TextStyle txtSM12w = GoogleFonts.inter(
+TextStyle txtSB12w = GoogleFonts.inter(
   color: whiteColor,
   fontWeight: FontWeight.w600,
   fontSize: 12,
 );
 
-TextStyle txtSM14d = GoogleFonts.inter(
+TextStyle txtSB14d = GoogleFonts.inter(
   color: darkColor,
   fontWeight: FontWeight.w600,
   fontSize: 14,
 );
 
-TextStyle txtSM14gn = GoogleFonts.inter(
+TextStyle txtSB14gn = GoogleFonts.inter(
   color: greenColor,
   fontWeight: FontWeight.w600,
   fontSize: 14,
 );
-// END w600SM //
+// END w600SB //
 
 // Text Style w500 Medium //
 TextStyle txtM16d = GoogleFonts.inter(
@@ -153,6 +153,12 @@ TextStyle txtM14d = GoogleFonts.inter(
   color: darkColor,
   fontWeight: FontWeight.w500,
   fontSize: 14,
+);
+
+TextStyle txtM12d = GoogleFonts.inter(
+  color: darkColor,
+  fontWeight: FontWeight.w500,
+  fontSize: 12,
 );
 
 TextStyle txtM12w = GoogleFonts.inter(
@@ -239,4 +245,9 @@ TextStyle txtR10r = GoogleFonts.inter(
 
 // END w400R //
 
-
+// Text Style w400 Light //
+TextStyle txtL12b = GoogleFonts.inter(
+  color: blueColor,
+  fontWeight: FontWeight.w300,
+  fontSize: 12,
+);
