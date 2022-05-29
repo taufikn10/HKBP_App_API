@@ -93,6 +93,12 @@ TextStyle txtSB14dh = GoogleFonts.inter(
   height: 1.5,
 );
 
+TextStyle txtSB14b = GoogleFonts.inter(
+  color: blueColor,
+  fontWeight: FontWeight.w600,
+  fontSize: 14,
+);
+
 TextStyle txtSB12g = GoogleFonts.inter(
   color: greyColor,
   fontWeight: FontWeight.w600,
@@ -193,6 +199,12 @@ TextStyle txtR14l = GoogleFonts.inter(
   fontSize: 14,
 );
 
+TextStyle txtR14g = GoogleFonts.inter(
+  color: greyColor,
+  fontWeight: FontWeight.w400,
+  fontSize: 14,
+);
+
 TextStyle txtR14d = GoogleFonts.inter(
   color: darkColor,
   fontWeight: FontWeight.w400,
@@ -248,6 +260,12 @@ TextStyle txtR10r = GoogleFonts.inter(
 // Text Style w400 Light //
 TextStyle txtL12b = GoogleFonts.inter(
   color: blueColor,
+  fontWeight: FontWeight.w300,
+  fontSize: 12,
+);
+
+TextStyle txtL12d = GoogleFonts.inter(
+  color: darkColor,
   fontWeight: FontWeight.w300,
   fontSize: 12,
 );

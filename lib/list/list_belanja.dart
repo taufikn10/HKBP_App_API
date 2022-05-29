@@ -78,6 +78,7 @@ final List<Map<String, dynamic>> belanja = [
   {
     "img": [
       "assets/images/blnja9.png",
+      "assets/images/blnja9.png",
     ],
     "nama_produk": "Kaos Kristen Gereja Worship - Hitam",
     "sisa": 467,

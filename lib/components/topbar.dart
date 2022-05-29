@@ -19,7 +19,7 @@ class TopBarDetails extends StatelessWidget implements PreferredSizeWidget {
         child: Icon(Icons.arrow_back_ios_new_rounded, color: darkColor),
         onTap: () => Navigator.of(context).pop(),
       ),
-      backgroundColor: Colors.transparent,
+      backgroundColor: whiteColor,
       elevation: 0,
       centerTitle: true,
       title: Text(
