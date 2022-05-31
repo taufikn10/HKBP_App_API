@@ -18,6 +18,7 @@ class _DetailKegiatanState extends State<DetailKegiatan> {
     return Scaffold(
       appBar: const TopBarDetails(
         txtTitle: 'Rincian Details',
+        color: Colors.transparent,
       ),
       body: BodyDetail(
         kegiatan: widget.kegiatan,

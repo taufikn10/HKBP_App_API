@@ -16,7 +16,10 @@ class _SuccessState extends State<Success> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: const TopBarDetails(txtTitle: "Rincian Jadwal"),
+      appBar: const TopBarDetails(
+        txtTitle: "Rincian Jadwal",
+        color: Colors.transparent,
+      ),
       body: const BodySuccess(),
     );
   }

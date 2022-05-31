@@ -19,6 +19,7 @@ class _SuccessState extends State<SuccessPay> {
       backgroundColor: backgroundColor,
       appBar: const TopBarDetails(
         txtTitle: "Rincian Jadwal",
+        color: Colors.transparent,
       ),
       body: const Body(),
     );

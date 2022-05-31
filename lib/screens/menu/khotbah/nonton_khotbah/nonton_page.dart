@@ -62,6 +62,7 @@ class _NontonPageState extends State<NontonPage> {
         backgroundColor: backgroundColor,
         appBar: const TopBarDetails(
           txtTitle: "Nonton Khotbah",
+          color: Colors.transparent,
         ),
         body: Column(
           children: [

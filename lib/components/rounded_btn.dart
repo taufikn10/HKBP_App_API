@@ -38,7 +38,7 @@ class StyleBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: const Color(0xff5A6BFF),
+        primary: blueColor,
       ),
       child: Text(
         txtBtn,

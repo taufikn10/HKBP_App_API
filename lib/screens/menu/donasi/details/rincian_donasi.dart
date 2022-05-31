@@ -17,7 +17,10 @@ class _RincianDonasiState extends State<RincianDonasi> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: const TopBarDetails(txtTitle: "Rincian Donasi"),
+      appBar: const TopBarDetails(
+        txtTitle: "Rincian Donasi",
+        color: Colors.transparent,
+      ),
       body: BodyRincianDonasi(
         donasiImg: widget.donasiImg,
       ),

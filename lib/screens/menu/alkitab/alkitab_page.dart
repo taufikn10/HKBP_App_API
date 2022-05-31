@@ -52,12 +52,12 @@ class _AlKitabPageState extends State<AlKitabPage> {
 
   @override
   Widget build(BuildContext context) {
-    final count = ServicesAlkitab().fetchAlkejadianService();
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: const TopBarDetails(
         txtTitle: "Alkitab",
+        color: Colors.transparent,
       ),
       body: Background(
         child: Column(
@@ -110,37 +110,21 @@ class _AlKitabPageState extends State<AlKitabPage> {
             Expanded(
               flex: 1,
               child: FutureBuilder<List<Verse>>(
-                future: ServicesAlkitab().fetchAlkejadianService(),
+                future: ServicesAlkitab().getVerse(),
                 builder: (context, snapshot) => CustomScrollView(
                   controller: _hideButtonController,
                   shrinkWrap: true,
-                  slivers: <Widget>[
+                  slivers: [
                     SliverList(
                       delegate: SliverChildBuilderDelegate(
                         ((context, index) {
-                          if (!snapshot.hasData) {
-                            return const Center(
-                                child: CircularProgressIndicator());
-                          } else {
+                          if (snapshot.hasData) {
                             return Padding(
                               padding: const EdgeInsets.only(
-                                  top: 8, bottom: 24, left: 24, right: 24),
+                                  top: 8, left: 24, right: 24),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    snapshot.data![index].content,
-                                    style: txtSB16d,
-                                    textAlign: TextAlign.justify,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 8, bottom: 24),
-                                    child: Text(
-                                      "1:1-2:7",
-                                      style: txtSB16d,
-                                    ),
-                                  ),
                                   RichText(
                                     text: TextSpan(
                                       children: [
@@ -162,12 +146,12 @@ class _AlKitabPageState extends State<AlKitabPage> {
                                       ],
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 50,
-                                  )
                                 ],
                               ),
                             );
+                          } else {
+                            return const Center(
+                                child: CircularProgressIndicator());
                           }
                         }),
                         childCount: snapshot.data?.length,

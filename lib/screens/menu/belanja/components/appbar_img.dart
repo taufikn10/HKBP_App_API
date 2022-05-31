@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hkbp_app/components/navbar.dart';
 import 'package:hkbp_app/fontstyle.dart';
+import 'package:page_transition/page_transition.dart';
 
 class AppbarImg extends StatelessWidget implements PreferredSizeWidget {
   final String txtTitle;
@@ -18,7 +20,13 @@ class AppbarImg extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       leading: GestureDetector(
         child: Icon(Icons.arrow_back_ios_new_rounded, color: darkColor),
-        onTap: () => Navigator.of(context).pop(),
+        onTap: () => Navigator.push(
+          context,
+          PageTransition(
+              alignment: Alignment.bottomLeft,
+              child: const Navbar(),
+              type: PageTransitionType.fade),
+        ),
       ),
       backgroundColor: whiteColor,
       elevation: 0,

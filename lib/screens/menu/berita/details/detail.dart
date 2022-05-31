@@ -17,7 +17,10 @@ class _DetailNewsState extends State<DetailsNews> {
   Widget build(BuildContext context) {
     List details = widget.detail['img'];
     return Scaffold(
-      appBar: const TopBarDetails(txtTitle: "Rincian Berita"),
+      appBar: const TopBarDetails(
+        txtTitle: "Rincian Berita",
+        color: Colors.transparent,
+      ),
       body: Background(
         child: Align(
           alignment: Alignment.topCenter,

@@ -10,7 +10,7 @@ class ServicesAlkitab {
     _dio = Dio();
   }
 
-  Future<List<Verse>> fetchAlkejadianService() async {
+  Future<List<Verse>> getVerse() async {
     try {
       Response response = await _dio!.get(_url);
       AlKejadian alKejadian = AlKejadian.fromJson(response.data);

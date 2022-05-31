@@ -108,7 +108,8 @@ class Body extends StatelessWidget {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(bottom: 24),
+                                  padding: const EdgeInsets.only(
+                                      bottom: 24, left: 16),
                                   child: Text(
                                     "Bersyukur Saya sudah selesai melakukan peneguhan sidi",
                                     style: txtR12d,

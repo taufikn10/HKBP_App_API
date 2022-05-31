@@ -17,7 +17,10 @@ class _DaftarIbadahState extends State<DaftarIbadah> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: const TopBarDetails(txtTitle: "Rincian Jadwal"),
+      appBar: const TopBarDetails(
+        txtTitle: "Rincian Jadwal",
+        color: Colors.transparent,
+      ),
       body: const Body(),
     );
   }

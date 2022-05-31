@@ -4,6 +4,7 @@ import 'package:hkbp_app/components/topbar.dart';
 import 'package:hkbp_app/fontstyle.dart';
 import 'package:hkbp_app/list/list_belanja.dart';
 import 'package:hkbp_app/screens/menu/belanja/components/line_lightgrey.dart';
+import 'package:hkbp_app/screens/menu/belanja/success/success.dart';
 import 'package:intl/intl.dart';
 
 class KonfirmasiPembelian extends StatefulWidget {
@@ -21,7 +22,10 @@ class _KonfirmasiPembelianState extends State<KonfirmasiPembelian> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: const TopBarDetails(txtTitle: "Konfirmasi Pembelian"),
+      appBar: TopBarDetails(
+        txtTitle: "Konfirmasi Pembelian",
+        color: whiteColor,
+      ),
       body: Background(
           child: SingleChildScrollView(
         child: Column(
@@ -496,8 +500,7 @@ class _KonfirmasiPembelianState extends State<KonfirmasiPembelian> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      const KonfirmasiPembelian(),
+                                  builder: (context) => const SuccessBuyPage(),
                                 ));
                           },
                           child: Text(
@@ -527,24 +530,24 @@ class _KonfirmasiPembelianState extends State<KonfirmasiPembelian> {
         builder: (BuildContext context) {
           return Align(
             alignment: Alignment.topCenter,
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Row(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
                         onPressed: () => Navigator.pop(context),
                         icon: const Icon(
                           Icons.close_rounded,
-                          size: 24,
+                          size: 20,
                         ),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsets.only(right: 24),
+                          padding: const EdgeInsets.only(right: 28),
                           child: Text(
                             "Rincian Belanja",
                             style: txtSB16d,
@@ -554,8 +557,167 @@ class _KonfirmasiPembelianState extends State<KonfirmasiPembelian> {
                       ),
                     ],
                   ),
-                ],
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Metode Pembayaran",
+                        style: txtM14d,
+                      ),
+                      Text(
+                        "Zipay",
+                        style: txtR14d,
+                      ),
+                    ],
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 16),
+                  child: LineLightgrey(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Total Harga",
+                            style: txtR14g,
+                          ),
+                          Text(
+                            NumberFormat.currency(
+                                    locale: 'id',
+                                    decimalDigits: 0,
+                                    symbol: "Rp ")
+                                .format(261000),
+                            style: txtR14d,
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Potongan",
+                              style: txtR14g,
+                            ),
+                            Text(
+                              NumberFormat.currency(
+                                      locale: 'id',
+                                      decimalDigits: 0,
+                                      symbol: "Rp ")
+                                  .format(0),
+                              style: txtR14d,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const LineLightgrey(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Total Pembayaran",
+                              style: txtR14g,
+                            ),
+                            Text(
+                              NumberFormat.currency(
+                                      locale: 'id',
+                                      decimalDigits: 0,
+                                      symbol: "Rp ")
+                                  .format(261000),
+                              style: txtSB14b,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const LineLightgrey(),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 16, bottom: 24, left: 24, right: 24),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Barang yang dibeli",
+                        style: txtM14d,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 12, bottom: 6),
+                                child: Text(
+                                  "Alkitab Sedang 052 TI",
+                                  style: txtM12d,
+                                ),
+                              ),
+                              Text(
+                                "1 x ${NumberFormat.currency(locale: 'id', decimalDigits: 0, symbol: "Rp ").format(261000)}",
+                                style: txtR12d,
+                              ),
+                            ],
+                          ),
+                          Text(
+                            NumberFormat.currency(
+                                    locale: 'id',
+                                    decimalDigits: 0,
+                                    symbol: "Rp ")
+                                .format(261000),
+                            style: txtSB14b,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 12, bottom: 6),
+                                child: Text(
+                                  "Hosti Polos",
+                                  style: txtM12d,
+                                ),
+                              ),
+                              Text(
+                                "4 x ${NumberFormat.currency(locale: 'id', decimalDigits: 0, symbol: "Rp ").format(1500)}",
+                                style: txtR12d,
+                              ),
+                            ],
+                          ),
+                          Text(
+                            NumberFormat.currency(
+                                    locale: 'id',
+                                    decimalDigits: 0,
+                                    symbol: "Rp ")
+                                .format(6000),
+                            style: txtSB14b,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           );
         });

@@ -16,7 +16,10 @@ class _RincianTingtingPageState extends State<RincianTingtingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const TopBarDetails(txtTitle: "Rincian Tingting"),
+      appBar: const TopBarDetails(
+        txtTitle: "Rincian Tingting",
+        color: Colors.transparent,
+      ),
       body: BodyRincianTingting(
         tingting: widget.tingting,
       ),

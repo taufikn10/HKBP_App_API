@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:hkbp_app/components/background.dart';
 import 'package:hkbp_app/fontstyle.dart';
 import 'package:hkbp_app/list/list_belanja.dart';
-import 'package:hkbp_app/screens/menu/belanja/components/controllers/cart_controller.dart';
 import 'package:hkbp_app/screens/menu/belanja/components/line_lightgrey.dart';
 import 'package:hkbp_app/screens/menu/belanja/deskripsi/desk_belanja_page.dart';
 import 'package:hkbp_app/screens/menu/belanja/konfirmasi/konfirmasi_page.dart';

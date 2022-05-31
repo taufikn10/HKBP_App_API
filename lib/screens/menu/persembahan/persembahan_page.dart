@@ -33,6 +33,7 @@ class _PersembahanPageState extends State<PersembahanPage> {
       backgroundColor: backgroundColor,
       appBar: const TopBarDetails(
         txtTitle: "Persembahan",
+        color: Colors.transparent,
       ),
       body: Body(
         dataTheme: theme.copyWith(checkboxTheme: newCheckBoxTheme),

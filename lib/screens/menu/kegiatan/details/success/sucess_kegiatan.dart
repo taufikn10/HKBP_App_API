@@ -16,6 +16,7 @@ class _PendaftaranBerhasilState extends State<PendaftaranBerhasil> {
     return const Scaffold(
       appBar: TopBarDetails(
         txtTitle: "Rincian Jadwal",
+        color: Colors.transparent,
       ),
       body: BodySuccess(),
     );
