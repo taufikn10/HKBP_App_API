@@ -31,6 +31,12 @@ TextStyle txtB12b = GoogleFonts.roboto(
   fontSize: 12,
 );
 
+TextStyle txtB12d = GoogleFonts.roboto(
+  color: darkColor,
+  fontWeight: FontWeight.w700,
+  fontSize: 12,
+);
+
 TextStyle txtB10d = GoogleFonts.inter(
   color: darkColor,
   fontWeight: FontWeight.w700,
@@ -266,6 +272,12 @@ TextStyle txtL12b = GoogleFonts.inter(
 
 TextStyle txtL12d = GoogleFonts.inter(
   color: darkColor,
+  fontWeight: FontWeight.w300,
+  fontSize: 12,
+);
+
+TextStyle txtL12r = GoogleFonts.inter(
+  color: redColor,
   fontWeight: FontWeight.w300,
   fontSize: 12,
 );

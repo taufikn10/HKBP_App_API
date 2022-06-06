@@ -4,7 +4,7 @@ import 'package:hkbp_app/models/video_tile.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoPlay extends StatefulWidget {
-  final Video video;
+  final Video1 video;
   const VideoPlay({Key? key, required this.video}) : super(key: key);
 
   @override

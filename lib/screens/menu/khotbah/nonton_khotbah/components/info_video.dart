@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hkbp_app/fontstyle.dart';
+import 'package:hkbp_app/models/khotbah/video.dart';
 import 'package:hkbp_app/models/video_tile.dart';
 import 'package:intl/intl.dart';
 
 class InfoDeskripsi extends StatefulWidget {
   const InfoDeskripsi({
     Key? key,
-    required this.video,
+    required this.videoItem,
   }) : super(key: key);
 
-  final Video video;
+  final VideoItem videoItem;
 
   @override
   State<InfoDeskripsi> createState() => _InfoDeskripsiState();
@@ -27,7 +28,7 @@ class _InfoDeskripsiState extends State<InfoDeskripsi> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            widget.video.title,
+            widget.videoItem.video.title,
             style: txtSB16d,
           ),
           // ignore: prefer_const_constructors
@@ -47,7 +48,7 @@ class _InfoDeskripsiState extends State<InfoDeskripsi> {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        '${DateFormat("d MMMM yyyy kk:mm", "id_ID").format(widget.video.timestamp)} WIB ',
+                        '${DateFormat("d MMMM yyyy, kk:mm", "id_ID").format(widget.videoItem.video.publishedAt)} WIB ',
                         style: txtR10d,
                       ),
                     ],
@@ -61,10 +62,10 @@ class _InfoDeskripsiState extends State<InfoDeskripsi> {
                           style: txtM10d,
                         ),
                         const SizedBox(width: 30),
-                        Text(
-                          widget.video.viewCount,
-                          style: txtR10d,
-                        ),
+                        // Text(
+                        //   widget.video.viewCount,
+                        //   style: txtR10d,
+                        // ),
                       ],
                     ),
                   ),
@@ -94,10 +95,10 @@ class _InfoDeskripsiState extends State<InfoDeskripsi> {
                           size: 20,
                           color: darkColor,
                         ),
-                        Text(
-                          widget.video.likes,
-                          style: txtR10d,
-                        )
+                        // Text(
+                        //   widget.video.likes,
+                        //   style: txtR10d,
+                        // )
                       ],
                     ),
                   ),
@@ -108,10 +109,10 @@ class _InfoDeskripsiState extends State<InfoDeskripsi> {
                         size: 20,
                         color: darkColor,
                       ),
-                      Text(
-                        widget.video.dislikes,
-                        style: txtR10d,
-                      )
+                      // Text(
+                      //   widget.video.dislikes,
+                      //   style: txtR10d,
+                      // )
                     ],
                   ),
                 ],
@@ -119,7 +120,7 @@ class _InfoDeskripsiState extends State<InfoDeskripsi> {
             ],
           ),
           buildText(
-            "Khotbah minggu / Jamita Minggu HKBP, Minggu 11 Agustus 2019 di HKBP Balige Ressort Balige oleh Pdt. Boho P. Pardede M.Div. Saudara-saudari yang dikasihi oleh Tuhan kita Yesus Kristus, selamat hari minggu dan selamat beribadah bagi kita sekalian, baik di gereja maupun di rumah kita masing-masing.",
+            widget.videoItem.video.description,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 16, bottom: 16),

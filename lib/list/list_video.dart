@@ -1,7 +1,7 @@
 import 'package:hkbp_app/models/video_tile.dart';
 
-final List<Video> videos = [
-  Video(
+final List<Video1> videos = [
+  Video1(
     title: 'Jamita Minggu - HKBP Balige - Matius 8:23-27',
     thumbnailUrl: 'https://img.youtube.com/vi/7fXsyXuzF-s/maxresdefault.jpg',
     videoUrl: "https://www.youtube.com/watch?v=7fXsyXuzF-s",
@@ -11,7 +11,7 @@ final List<Video> videos = [
     likes: '18',
     dislikes: '2',
   ),
-  Video(
+  Video1(
     title:
         'Khotbah Ephorus HKBP | Minggu Reminiscere - Berserah Kepada Rencana Tuhan.',
     thumbnailUrl: 'https://img.youtube.com/vi/KBGTSBkTKgA/maxresdefault.jpg',
@@ -22,7 +22,7 @@ final List<Video> videos = [
     likes: '10',
     dislikes: '3',
   ),
-  Video(
+  Video1(
     title:
         'Khotbah Kepala Departemen Marturia | Minggu Reminiscere - MARGURU TU LOMO NI ROHA NI DEBATA',
     thumbnailUrl: 'https://img.youtube.com/vi/H5HDpGpBHus/maxresdefault.jpg',
@@ -33,7 +33,7 @@ final List<Video> videos = [
     likes: '11',
     dislikes: '3',
   ),
-  Video(
+  Video1(
     title: 'Ibadah Partangiangan HKBP Depok 1, PDT. BP Sihombing, S.TH',
     thumbnailUrl: 'https://img.youtube.com/vi/8gAihw8LB-I/maxresdefault.jpg',
     videoUrl: "https://www.youtube.com/watch?v=8gAihw8LB-I&t=2s",

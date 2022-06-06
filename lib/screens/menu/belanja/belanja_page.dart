@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hkbp_app/fontstyle.dart';
 import 'package:hkbp_app/screens/menu/belanja/components/appbar_img.dart';
 import 'package:hkbp_app/screens/menu/belanja/components/body.dart';
+import 'package:hkbp_app/screens/menu/belanja/pesanan/transaksi_page.dart';
 
 class BelanjaPage extends StatefulWidget {
   const BelanjaPage({Key? key}) : super(key: key);

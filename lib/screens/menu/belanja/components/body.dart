@@ -24,209 +24,216 @@ class _BodyBelanjaState extends State<BodyBelanja> {
     return Background(
       child: Align(
         alignment: Alignment.topCenter,
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: belanja.length,
-                itemBuilder: (context, index) => GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DeskripsiBelanjaPage(
-                            descBelanja: belanja[index],
-                          ),
-                        ));
-                  },
-                  child: Container(
-                    color: whiteColor,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 16),
-                            child: Row(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(16),
-                                  child: Image.asset(
-                                    belanja[index]["img"][0],
-                                    height: 64,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: belanja.length,
+                  itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DeskripsiBelanjaPage(
+                              descBelanja: belanja[index],
+                            ),
+                          ));
+                    },
+                    child: Container(
+                      color: whiteColor,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 16),
+                              child: Row(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(16),
+                                    child: Image.asset(
+                                      belanja[index]["img"][0],
+                                      height: 64,
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(width: 12),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        belanja[index]["nama_produk"],
-                                        style: txtM14d,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 2, bottom: 0),
-                                        child: Row(
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          belanja[index]["nama_produk"],
+                                          style: txtM14d,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 2, bottom: 0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                "Sisa ",
+                                                style: txtL12b,
+                                              ),
+                                              Text(
+                                                belanja[index]["sisa"]
+                                                    .toString(),
+                                                style: txtL12b,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Row(
                                           children: [
                                             Text(
-                                              "Sisa ",
-                                              style: txtL12b,
+                                              NumberFormat.currency(
+                                                      locale: 'id',
+                                                      decimalDigits: 0,
+                                                      symbol: "Rp")
+                                                  .format(
+                                                      belanja[index]["harga"]),
+                                              style: txtSB12d,
                                             ),
-                                            Text(
-                                              belanja[index]["sisa"].toString(),
-                                              style: txtL12b,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Row(
-                                        children: [
-                                          Text(
-                                            NumberFormat.currency(
-                                                    locale: 'id',
-                                                    decimalDigits: 0,
-                                                    symbol: "Rp")
-                                                .format(
-                                                    belanja[index]["harga"]),
-                                            style: txtSB12d,
-                                          ),
-                                          const Spacer(),
-                                          _showAdd
-                                              ? OutlinedButton(
-                                                  style:
-                                                      OutlinedButton.styleFrom(
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8),
+                                            const Spacer(),
+                                            _showAdd
+                                                ? OutlinedButton(
+                                                    style: OutlinedButton
+                                                        .styleFrom(
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8),
+                                                      ),
+                                                      side: BorderSide(
+                                                          width: 1,
+                                                          color: blueColor),
                                                     ),
-                                                    side: BorderSide(
-                                                        width: 1,
-                                                        color: blueColor),
-                                                  ),
-                                                  onPressed: () {
-                                                    setState(() {
-                                                      _showAdd = !_showAdd;
-                                                      counter++;
-                                                    });
-                                                  },
-                                                  child: Text(
-                                                    "Tambah",
-                                                    style: txtM12b,
-                                                  ),
-                                                )
-                                              : SizedBox(
-                                                  height: 47,
-                                                  child: Row(
-                                                    children: [
-                                                      counter != 0
-                                                          ? Material(
-                                                              type: MaterialType
-                                                                  .transparency,
-                                                              child: Ink(
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  border: Border.all(
+                                                    onPressed: () {
+                                                      setState(() {
+                                                        _showAdd = !_showAdd;
+                                                        counter++;
+                                                      });
+                                                    },
+                                                    child: Text(
+                                                      "Tambah",
+                                                      style: txtM12b,
+                                                    ),
+                                                  )
+                                                : SizedBox(
+                                                    height: 47,
+                                                    child: Row(
+                                                      children: [
+                                                        counter != 0
+                                                            ? Material(
+                                                                type: MaterialType
+                                                                    .transparency,
+                                                                child: Ink(
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    border: Border.all(
+                                                                        color:
+                                                                            blueColor,
+                                                                        width:
+                                                                            2.0),
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                  ),
+                                                                  child:
+                                                                      InkWell(
+                                                                    onTap: () {
+                                                                      setState(
+                                                                          () {
+                                                                        counter !=
+                                                                                0
+                                                                            ? counter--
+                                                                            : counter;
+                                                                        if (counter ==
+                                                                            0) {
+                                                                          _showAdd =
+                                                                              !_showAdd;
+                                                                        }
+                                                                      });
+                                                                    },
+                                                                    child: Icon(
+                                                                      Icons
+                                                                          .remove,
+                                                                      size: 21,
                                                                       color:
                                                                           blueColor,
-                                                                      width:
-                                                                          2.0),
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  shape: BoxShape
-                                                                      .circle,
-                                                                ),
-                                                                child: InkWell(
-                                                                  onTap: () {
-                                                                    setState(
-                                                                        () {
-                                                                      counter !=
-                                                                              0
-                                                                          ? counter--
-                                                                          : counter;
-                                                                      if (counter ==
-                                                                          0) {
-                                                                        _showAdd =
-                                                                            !_showAdd;
-                                                                      }
-                                                                    });
-                                                                  },
-                                                                  child: Icon(
-                                                                    Icons
-                                                                        .remove,
-                                                                    size: 21,
+                                                                    ),
+                                                                  ),
+                                                                ))
+                                                            : Container(),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .symmetric(
+                                                                  horizontal:
+                                                                      12),
+                                                          child: Text(
+                                                              counter
+                                                                  .toString(),
+                                                              style: txtR14d),
+                                                        ),
+                                                        Material(
+                                                            type: MaterialType
+                                                                .transparency,
+                                                            child: Ink(
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                border: Border.all(
                                                                     color:
                                                                         blueColor,
-                                                                  ),
-                                                                ),
-                                                              ))
-                                                          : Container(),
-                                                      Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                    .symmetric(
-                                                                horizontal: 12),
-                                                        child: Text(
-                                                            counter.toString(),
-                                                            style: txtR14d),
-                                                      ),
-                                                      Material(
-                                                          type: MaterialType
-                                                              .transparency,
-                                                          child: Ink(
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              border: Border.all(
+                                                                    width: 2.0),
+                                                                color: Colors
+                                                                    .transparent,
+                                                                shape: BoxShape
+                                                                    .circle,
+                                                              ),
+                                                              child: InkWell(
+                                                                onTap: () {
+                                                                  setState(() {
+                                                                    counter++;
+                                                                  });
+                                                                },
+                                                                child: Icon(
+                                                                  Icons.add,
+                                                                  size: 21,
                                                                   color:
                                                                       blueColor,
-                                                                  width: 2.0),
-                                                              color: Colors
-                                                                  .transparent,
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
-                                                            child: InkWell(
-                                                              onTap: () {
-                                                                setState(() {
-                                                                  counter++;
-                                                                });
-                                                              },
-                                                              child: Icon(
-                                                                Icons.add,
-                                                                size: 21,
-                                                                color:
-                                                                    blueColor,
+                                                                ),
                                                               ),
-                                                            ),
-                                                          )),
-                                                    ],
+                                                            )),
+                                                      ],
+                                                    ),
                                                   ),
-                                                ),
-                                        ],
-                                      ),
-                                    ],
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                          const LineLightgrey(),
-                        ],
+                            const LineLightgrey(),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            _showAdd ? Container() : showModalSheet(),
-          ],
+              _showAdd ? Container() : showModalSheet(),
+            ],
+          ),
         ),
       ),
     );

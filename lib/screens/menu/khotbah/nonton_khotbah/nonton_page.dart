@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hkbp_app/components/topbar.dart';
 import 'package:hkbp_app/fontstyle.dart';
-import 'package:hkbp_app/models/video_tile.dart';
+import 'package:hkbp_app/models/khotbah/video.dart';
+// import 'package:hkbp_app/models/video_tile.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import 'components/body_nonton.dart';
 
 class NontonPage extends StatefulWidget {
-  const NontonPage(
-    this.video, {
+  const NontonPage({
     Key? key,
+    required this.videoItem,
   }) : super(key: key);
+
+  final VideoItem videoItem;
 
   @override
   State<NontonPage> createState() => _NontonPageState();
-  final Video video;
 }
 
 class _NontonPageState extends State<NontonPage> {
@@ -25,7 +27,8 @@ class _NontonPageState extends State<NontonPage> {
   void initState() {
     super.initState();
     _playerController = YoutubePlayerController(
-      initialVideoId: '${YoutubePlayer.convertUrlToId(widget.video.videoUrl)}',
+      initialVideoId:
+          '${YoutubePlayer.convertUrlToId(widget.videoItem.video.resourceId.videoId)}',
       flags: const YoutubePlayerFlags(
         mute: false,
         autoPlay: true,
@@ -75,7 +78,7 @@ class _NontonPageState extends State<NontonPage> {
                 child: Column(
                   children: [
                     BodyNonton(
-                      video: widget.video,
+                      videoItem: widget.videoItem,
                     ),
                   ],
                 ),

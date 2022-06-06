@@ -5,11 +5,11 @@ import 'package:flutter/rendering.dart';
 import 'package:hkbp_app/components/background.dart';
 import 'package:hkbp_app/components/topbar.dart';
 import 'package:hkbp_app/fontstyle.dart';
+
 import 'package:hkbp_app/models/alkitab/kejadian.dart';
 import 'package:hkbp_app/screens/menu/alkitab/details/details_page.dart';
 import 'package:hkbp_app/services/alkitab/service_alkejadian.dart';
 
-import 'components/body.dart';
 import 'components/box.dart';
 import 'components/floating_btn.dart';
 
@@ -107,57 +107,86 @@ class _AlKitabPageState extends State<AlKitabPage> {
                 ),
               ),
             ),
+            FutureBuilder<AlKejadian>(
+              future: ServicesAlkitab().getDataAlkitab(),
+              builder: ((context, snapshot) {
+                {
+                  if (snapshot.hasData) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: Column(
+                        children: [
+                          FutureBuilder<List<Verse>>(
+                            future: ServicesAlkitab().getVerse(),
+                            builder: ((context, snapshot) => ListView.builder(
+                                itemCount: 1,
+                                shrinkWrap: true,
+                                itemBuilder: (context, index) {
+                                  return snapshot.hasData
+                                      ? Text(snapshot.data![index].content,
+                                          style: txtSB16d)
+                                      : const Center(
+                                          child: CircularProgressIndicator());
+                                })),
+                          ),
+                          const SizedBox(height: 8),
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              snapshot.data!.title,
+                              style: txtSB16d,
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  } else {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                }
+              }),
+            ),
             Expanded(
-              flex: 1,
               child: FutureBuilder<List<Verse>>(
                 future: ServicesAlkitab().getVerse(),
-                builder: (context, snapshot) => CustomScrollView(
+                builder: (context, snapshot) => ListView.builder(
                   controller: _hideButtonController,
-                  shrinkWrap: true,
-                  slivers: [
-                    SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        ((context, index) {
-                          if (snapshot.hasData) {
-                            return Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 8, left: 24, right: 24),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                  itemCount: snapshot.data?.length,
+                  itemBuilder: ((context, index) {
+                    if (snapshot.hasData) {
+                      return Padding(
+                        padding:
+                            const EdgeInsets.only(top: 8, left: 24, right: 24),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            RichText(
+                              text: TextSpan(
                                 children: [
-                                  RichText(
-                                    text: TextSpan(
-                                      children: [
-                                        WidgetSpan(
-                                          child: Transform.translate(
-                                            offset: const Offset(1, -4),
-                                            child: Text(
-                                              snapshot.data![index].verse
-                                                  .toString(),
-                                              textScaleFactor: 0.8,
-                                              style: txtSB14dh,
-                                            ),
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text: snapshot.data![index].content,
-                                          style: txtR14dh,
-                                        ),
-                                      ],
+                                  WidgetSpan(
+                                    child: Transform.translate(
+                                      offset: const Offset(1, -4),
+                                      child: Text(
+                                        "${snapshot.data![index].verse} ",
+                                        textScaleFactor: 0.8,
+                                        style: txtSB14dh,
+                                      ),
                                     ),
+                                  ),
+                                  TextSpan(
+                                    text: snapshot.data![index].content,
+                                    style: txtR14dh,
                                   ),
                                 ],
                               ),
-                            );
-                          } else {
-                            return const Center(
-                                child: CircularProgressIndicator());
-                          }
-                        }),
-                        childCount: snapshot.data?.length,
-                      ),
-                    ),
-                  ],
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                  }),
                 ),
               ),
             ),

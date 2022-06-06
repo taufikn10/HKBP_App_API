@@ -3,6 +3,8 @@ import 'package:hkbp_app/components/navbar.dart';
 import 'package:hkbp_app/fontstyle.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../pesanan/transaksi_page.dart';
+
 class AppbarImg extends StatelessWidget implements PreferredSizeWidget {
   final String txtTitle;
   final dynamic imgIcon;
@@ -39,7 +41,12 @@ class AppbarImg extends StatelessWidget implements PreferredSizeWidget {
         Padding(
           padding: const EdgeInsets.only(right: 20),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const TransaksiPage()));
+            },
             child: ImageIcon(
               imgIcon,
               color: darkColor,

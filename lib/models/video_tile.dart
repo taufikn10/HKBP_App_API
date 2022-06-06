@@ -1,4 +1,4 @@
-class Video {
+class Video1 {
   final String title;
   final String thumbnailUrl;
   final String duration;
@@ -8,7 +8,7 @@ class Video {
   final String dislikes;
   final String videoUrl;
 
-  const Video({
+  const Video1({
     required this.title,
     required this.thumbnailUrl,
     required this.duration,
