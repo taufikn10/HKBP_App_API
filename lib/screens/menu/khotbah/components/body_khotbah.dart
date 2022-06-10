@@ -88,7 +88,6 @@ class _BodyKhotbahState extends State<BodyKhotbah> {
                       children: [
                         Image.network(
                           videoItem.video.thumbnails.medium.url,
-                          height: 197,
                           width: double.infinity,
                           fit: BoxFit.cover,
                         ),

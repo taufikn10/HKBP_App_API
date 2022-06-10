@@ -9,9 +9,10 @@ class PassageListServices {
     _dio = Dio();
   }
 
-  Future<List<PassageListElement>> fetchPassageListServices() async {
+  Future<List<PassageListElement>> getPassageList() async {
     try {
       Response response = await _dio!.get(_url);
+      print(response.data);
       PassageListModel passageListModel =
           PassageListModel.fromJson(response.data);
       return passageListModel.passageList;

@@ -49,91 +49,97 @@ class _CommentsState extends State<Comments> {
                   GestureDetector(
                     onTap: () {
                       showBottomSheet(
-                          enableDrag: false,
+                          enableDrag: true,
                           context: context,
                           builder: (BuildContext context) {
-                            return Container(
-                              height: MediaQuery.of(context).size.height * 0.55,
-                              color: backgroundColor,
-                              child: Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 16, left: 16, bottom: 16, right: 16),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Text(
-                                                "Komentar",
-                                                style: txtSB14d,
-                                              ),
-                                              Text(
-                                                " (26)",
-                                                style: txtR14d,
-                                              ),
-                                            ],
-                                          ),
-                                          GestureDetector(
-                                            onTap: () => Navigator.pop(context),
-                                            child: Row(
+                            return Flexible(
+                              flex: 4,
+                              child: Container(
+                                color: backgroundColor,
+                                child: Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 16,
+                                        left: 16,
+                                        bottom: 16,
+                                        right: 16),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
                                               children: [
                                                 Text(
-                                                  "Kembali",
-                                                  style: txtSB10b,
+                                                  "Komentar",
+                                                  style: txtSB14d,
                                                 ),
-                                                Icon(
-                                                  Icons
-                                                      .arrow_forward_ios_rounded,
-                                                  size: 12,
-                                                  color: blueColor,
+                                                Text(
+                                                  " (26)",
+                                                  style: txtR14d,
+                                                ),
+                                              ],
+                                            ),
+                                            GestureDetector(
+                                              onTap: () =>
+                                                  Navigator.pop(context),
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    "Kembali",
+                                                    style: txtSB10b,
+                                                  ),
+                                                  Icon(
+                                                    Icons
+                                                        .arrow_forward_ios_rounded,
+                                                    size: 12,
+                                                    color: blueColor,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        inputComment(name: 'Roni'),
+                                        Expanded(
+                                          child: SingleChildScrollView(
+                                            child: ListView(
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              shrinkWrap: true,
+                                              children: [
+                                                buildListTileAll(
+                                                  comment:
+                                                      "Mauliate amang, sangat diberkati. Semoga dipakai Tuhan semakin dahsyat.",
+                                                  name: 'Moman Yo',
+                                                ),
+                                                buildListTileAll(
+                                                  comment:
+                                                      "Semoga makin sukses terus amangg. Diberkati Tuhan...",
+                                                  name: 'Poman',
+                                                ),
+                                                buildListTileAll(
+                                                  comment:
+                                                      "Terima kasih khotbahnya. Sangat mengubah sudut pandang saya",
+                                                  name: 'Soman',
+                                                ),
+                                                buildListTileAll(
+                                                  comment:
+                                                      "Dahsyat emang informasinya. Terima kasih banyak atas ilmunyaa..",
+                                                  name: 'Toman',
+                                                ),
+                                                buildListTileAll(
+                                                  comment:
+                                                      "Sukses terus amang. Semoganya ilmunya akan jadi bermanfaat buat orang banyak",
+                                                  name: 'Moman',
                                                 ),
                                               ],
                                             ),
                                           ),
-                                        ],
-                                      ),
-                                      inputComment(name: 'Roni'),
-                                      Expanded(
-                                        child: SingleChildScrollView(
-                                          child: ListView(
-                                            physics:
-                                                const NeverScrollableScrollPhysics(),
-                                            shrinkWrap: true,
-                                            children: [
-                                              buildListTileAll(
-                                                comment:
-                                                    "Mauliate amang, sangat diberkati. Semoga dipakai Tuhan semakin dahsyat.",
-                                                name: 'Moman Yo',
-                                              ),
-                                              buildListTileAll(
-                                                comment:
-                                                    "Semoga makin sukses terus amangg. Diberkati Tuhan...",
-                                                name: 'Poman',
-                                              ),
-                                              buildListTileAll(
-                                                comment:
-                                                    "Terima kasih khotbahnya. Sangat mengubah sudut pandang saya",
-                                                name: 'Soman',
-                                              ),
-                                              buildListTileAll(
-                                                comment:
-                                                    "Dahsyat emang informasinya. Terima kasih banyak atas ilmunyaa..",
-                                                name: 'Toman',
-                                              ),
-                                              buildListTileAll(
-                                                comment:
-                                                    "Sukses terus amang. Semoganya ilmunya akan jadi bermanfaat buat orang banyak",
-                                                name: 'Moman',
-                                              ),
-                                            ],
-                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

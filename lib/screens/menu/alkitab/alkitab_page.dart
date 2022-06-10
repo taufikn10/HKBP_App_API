@@ -5,10 +5,10 @@ import 'package:flutter/rendering.dart';
 import 'package:hkbp_app/components/background.dart';
 import 'package:hkbp_app/components/topbar.dart';
 import 'package:hkbp_app/fontstyle.dart';
+import 'package:hkbp_app/models/alkitab/alkitab.dart';
 
-import 'package:hkbp_app/models/alkitab/kejadian.dart';
 import 'package:hkbp_app/screens/menu/alkitab/details/details_page.dart';
-import 'package:hkbp_app/services/alkitab/service_alkejadian.dart';
+import 'package:hkbp_app/services/alkitab/service_kitab.dart';
 
 import 'components/box.dart';
 import 'components/floating_btn.dart';
@@ -23,9 +23,22 @@ class AlKitabPage extends StatefulWidget {
 class _AlKitabPageState extends State<AlKitabPage> {
   late ScrollController _hideButtonController;
   var _isVisible = true;
+  AlkitabService alkitabService = AlkitabService();
+  List<Verse> _verses = [];
+  late bool _loading;
+
+  _getVerses() async {
+    _verses = await alkitabService.getVerses("Kej", 1);
+    setState(() {
+      _loading = false;
+    });
+  }
+
   @override
   initState() {
     super.initState();
+    _loading = true;
+    _getVerses();
     _hideButtonController = ScrollController();
     _hideButtonController.addListener(() {
       if (_hideButtonController.position.userScrollDirection ==
@@ -78,10 +91,21 @@ class _AlKitabPageState extends State<AlKitabPage> {
                               MaterialPageRoute(
                                   builder: (context) => const DetailKitab()));
                         },
-                        child: Text(
-                          "Kejadian 1",
-                          style: txtSB14d,
-                          textAlign: TextAlign.center,
+                        child: FutureBuilder<AlKitab>(
+                          future: AlkitabService().getKitab("Kej", 1),
+                          builder: ((context, snapshot) {
+                            {
+                              if (snapshot.hasData) {
+                                return Text(
+                                  snapshot.data!.title,
+                                  style: txtSB14d,
+                                  textAlign: TextAlign.center,
+                                );
+                              } else {
+                                return const Center(child: Text(""));
+                              }
+                            }
+                          }),
                         ),
                       ),
                     ),
@@ -107,37 +131,34 @@ class _AlKitabPageState extends State<AlKitabPage> {
                 ),
               ),
             ),
-            FutureBuilder<AlKejadian>(
-              future: ServicesAlkitab().getDataAlkitab(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: FutureBuilder<List<Verse>>(
+                future: AlkitabService().getTitle("Kej", 1),
+                builder: ((context, snapshot) => ListView.builder(
+                    itemCount: 1,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return snapshot.hasData
+                          ? Text(snapshot.data![index].content, style: txtSB16d)
+                          : const Center(child: Text(""));
+                    })),
+              ),
+            ),
+            const SizedBox(height: 8),
+            FutureBuilder<AlKitab>(
+              future: AlkitabService().getKitab("Kej", 1),
               builder: ((context, snapshot) {
                 {
                   if (snapshot.hasData) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
-                      child: Column(
-                        children: [
-                          FutureBuilder<List<Verse>>(
-                            future: ServicesAlkitab().getVerse(),
-                            builder: ((context, snapshot) => ListView.builder(
-                                itemCount: 1,
-                                shrinkWrap: true,
-                                itemBuilder: (context, index) {
-                                  return snapshot.hasData
-                                      ? Text(snapshot.data![index].content,
-                                          style: txtSB16d)
-                                      : const Center(
-                                          child: CircularProgressIndicator());
-                                })),
-                          ),
-                          const SizedBox(height: 8),
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              snapshot.data!.title,
-                              style: txtSB16d,
-                            ),
-                          )
-                        ],
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          snapshot.data!.title,
+                          style: txtSB16d,
+                        ),
                       ),
                     );
                   } else {
@@ -147,48 +168,43 @@ class _AlKitabPageState extends State<AlKitabPage> {
               }),
             ),
             Expanded(
-              child: FutureBuilder<List<Verse>>(
-                future: ServicesAlkitab().getVerse(),
-                builder: (context, snapshot) => ListView.builder(
-                  controller: _hideButtonController,
-                  itemCount: snapshot.data?.length,
-                  itemBuilder: ((context, index) {
-                    if (snapshot.hasData) {
-                      return Padding(
-                        padding:
-                            const EdgeInsets.only(top: 8, left: 24, right: 24),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            RichText(
-                              text: TextSpan(
-                                children: [
-                                  WidgetSpan(
-                                    child: Transform.translate(
-                                      offset: const Offset(1, -4),
-                                      child: Text(
-                                        "${snapshot.data![index].verse} ",
-                                        textScaleFactor: 0.8,
-                                        style: txtSB14dh,
+              child: _loading
+                  ? const Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : ListView.builder(
+                      controller: _hideButtonController,
+                      itemCount: _verses.length,
+                      itemBuilder: ((context, index) => Padding(
+                            padding: const EdgeInsets.only(
+                                bottom: 8, left: 24, right: 24, top: 4),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      WidgetSpan(
+                                        child: Transform.translate(
+                                          offset: const Offset(1, -4),
+                                          child: Text(
+                                            "${_verses[index].verse - 1} ",
+                                            textScaleFactor: 0.8,
+                                            style: txtSB14dh,
+                                          ),
+                                        ),
                                       ),
-                                    ),
+                                      TextSpan(
+                                        text: _verses[index].content,
+                                        style: txtR14dh,
+                                      ),
+                                    ],
                                   ),
-                                  TextSpan(
-                                    text: snapshot.data![index].content,
-                                    style: txtR14dh,
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      );
-                    } else {
-                      return const Center(child: CircularProgressIndicator());
-                    }
-                  }),
-                ),
-              ),
+                          )),
+                    ),
             ),
           ],
         ),

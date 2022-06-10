@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hkbp_app/components/topbar.dart';
 import 'package:hkbp_app/fontstyle.dart';
 import 'package:hkbp_app/models/khotbah/video.dart';
+import 'package:hkbp_app/screens/menu/khotbah/nonton_khotbah/components/topbar_video.dart';
 // import 'package:hkbp_app/models/video_tile.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -63,16 +63,16 @@ class _NontonPageState extends State<NontonPage> {
       ),
       builder: (context, player) => Scaffold(
         backgroundColor: backgroundColor,
-        appBar: const TopBarDetails(
+        appBar: TopBarVideo(
           txtTitle: "Nonton Khotbah",
           color: Colors.transparent,
+          video: Padding(
+            padding: const EdgeInsets.only(bottom: 16),
+            child: player,
+          ),
         ),
         body: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 16),
-              child: player,
-            ),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
